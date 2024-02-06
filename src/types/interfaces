@@ -1,0 +1,6 @@
+interface user {
+    username: string;
+    note: string;
+    title: string;
+    id: number;
+}
