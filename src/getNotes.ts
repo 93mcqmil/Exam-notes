@@ -1,9 +1,11 @@
 import "./main";
+import { User } from "./types/userFace";
+
 
 async function fetchNotesForUser(username: string) {
   try {
     const response = await fetch(
-      `https://o6wl0z7avc.execute-api.eu-north-1.amazonaws.com/api/notes/${username}`
+      `https://o6wl0z7avc.execute-api.eu-north-1.amazonaws.com/api/notes/mcqueen`
     );
     //check if answer is ok
     if (!response.ok) {
@@ -12,7 +14,7 @@ async function fetchNotesForUser(username: string) {
     }
     //converting answer(data) to a javascript-object
     const data = await response.json();
-    console.log("Notes for user", username + ":");
+
     console.log(data);
   } catch (error) {
     console.error("Could't fetch notes", error);

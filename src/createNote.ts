@@ -1,10 +1,10 @@
 import "./main";
 import { User } from "./types/userFace";
 
-export async function createNote(user: User) {
+export async function createNote(username: any) {
   try {
     const notePost = {
-      username: user.username,
+      username: username,
       title: "anteckning",
       note: "Första anteckningen",
     };
@@ -24,16 +24,19 @@ export async function createNote(user: User) {
       throw new Error("`HTTP error!");
     }
     const data = await response.json();
-    console.log(data);
+    console.log(data.notePost);
   } catch (error) {
     console.error("error creting note: ", error);
   }
 }
-const user: User = {
+const User = {
   username: "Mcqueen",
-  note: "",
+  note: "Vad håller jag på med?!",
   title: "",
   id: "",
 };
+console.log(User)
 
-createNote(user);
+// createNote(User);
+
+
