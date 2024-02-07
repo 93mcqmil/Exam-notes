@@ -1,9 +1,10 @@
 import './style.css'
 import "./getNotes"
+import "./createNote"
+import { User } from './types/userFace';
 
-
-
-// import { setupCounter } from './counter.ts'
 
 const app = document.querySelector<HTMLDivElement>('#app')!;
+// console.log(app);
+
 

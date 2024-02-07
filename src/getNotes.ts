@@ -2,7 +2,9 @@ import "./main";
 
 async function fetchNotesForUser(username: string) {
   try {
-    const response = await fetch(`https://o6wl0z7avc.execute-api.eu-north-1.amazonaws.com/api/notes/${username}`);
+    const response = await fetch(
+      `https://o6wl0z7avc.execute-api.eu-north-1.amazonaws.com/api/notes/${username}`
+    );
     //check if answer is ok
     if (!response.ok) {
       //if not ok throw error message
@@ -18,5 +20,5 @@ async function fetchNotesForUser(username: string) {
 }
 
 //username to get notes
-const username = 'mcqueen';
+const username = "mcqueen";
 fetchNotesForUser(username);
