@@ -1,12 +1,22 @@
 import "./main";
 import { User } from "./types/userFace";
 
-export async function createNote(username: any) {
+
+export async function createNote() {
+  const usernameInput: HTMLInputElement | null = document.querySelector<HTMLInputElement>("#formInputUsername");
+  const username: string | undefined = usernameInput?.value;
+
+  const titleInput: HTMLInputElement | null = document.querySelector<HTMLInputElement>("#formInputTitle");
+  const title: string | undefined = titleInput?.value;
+
+  const noteInput: HTMLInputElement | null = document.querySelector<HTMLInputElement>("#formInputNote");
+  const note: string | undefined = noteInput?.value;
+  console.log("submit button clicked")
   try {
     const notePost = {
-      username: username,
-      title: "anteckning",
-      note: "Första anteckningen",
+      username,
+      title,
+      note,
     };
 
     const response = await fetch(
@@ -20,23 +30,17 @@ export async function createNote(username: any) {
       }
     );
 
-    if (!response.ok) {
-      throw new Error("`HTTP error!");
+    if (response.ok) {
+      //Send to new page
     }
-    const data = await response.json();
-    console.log(data.notePost);
+    // const data = await response.json();
+    // console.log(data.notePost);
   } catch (error) {
-    console.error("error creting note: ", error);
+    console.error("error creating note: ", error);
   }
 }
-const User = {
-  username: "Mcqueen",
-  note: "Vad håller jag på med?!",
-  title: "",
-  id: "",
-};
-console.log(User)
 
-// createNote(User);
+
+
 
 

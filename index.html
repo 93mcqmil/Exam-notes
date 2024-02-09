@@ -12,13 +12,18 @@
 <body>
   <div id="app">
 
-    <form action="">
-      <input type="text" placeholder="Username" class="form__user">
-      <button class="form__btnShowNote">Get my Notes</button>
+    <form action="GetMyNotes">
+      <input id="formInputUsername" type="text" placeholder="Username" class="form__user">
+
+    </form>
+    <button id="GetNotes-btn">Get my Notes</button>
+
+    <form action="SubmitNotes">
+
       <input type="text" placeholder="Title" class="form__title">
       <input type="text" placeholder="Note" class="form__note">
-      <button class="form__btn">Submit new Note</button>
     </form>
+    <button id="submit-btn">Submit new Note</button>
 
     <article class="notes-article">
       <h2>Saved Notes</h2>
@@ -27,6 +32,7 @@
 
   </div>
   <script type="module" src="/src/main.ts"></script>
+
 </body>
 
 </html>
