@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./src/sass/main.scss">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vite + TS</title>
+  <link rel="stylesheet" href="src/sass/styles.scss">
 </head>
 
 <body>
@@ -20,8 +21,8 @@
 
     <form action="SubmitNotes">
 
-      <input type="text" placeholder="Title" class="form__title">
-      <input type="text" placeholder="Note" class="form__note">
+      <input id="formInputTitle" type="text" placeholder="Title" class="form__title">
+      <input id="formInputNote" type="text" placeholder="Note" class="form__note">
     </form>
     <button id="submit-btn">Submit new Note</button>
 
@@ -29,6 +30,8 @@
       <h2>Saved Notes</h2>
       <section class="user-notes"></section>
     </article>
+
+    <div id="result"></div>
 
   </div>
   <script type="module" src="/src/main.ts"></script>

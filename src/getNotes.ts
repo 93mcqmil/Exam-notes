@@ -39,11 +39,16 @@ export async function fetchNotesForUser() {
 }
 
 //username to get notes
-const username = "mcqueen";
+// const username = "mcqueen";
 
 // createNote("mcqueen");
 document.getElementById("GetNotes-btn")?.addEventListener("click", () => { fetchNotesForUser() })
-document.getElementById("submit-btn")?.addEventListener("click", createNote);
+// document.getElementById("submit-btn")?.addEventListener("click", () => {
+// createNote);
+// });
+document.getElementById("submit-btn")?.addEventListener("click", () => {
+  createNote();
+});
 
 
 
