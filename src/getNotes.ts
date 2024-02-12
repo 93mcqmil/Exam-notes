@@ -1,6 +1,10 @@
 import "./main";
 import { User } from "./types/userFace";
 import { createNote } from "./createNote";
+import { editNote } from "./editNote";
+import { updateNote } from "./updateNote";
+import { deleteNote } from "./deleteNote";
+
 
 
 export async function fetchNotesForUser() {
@@ -24,10 +28,36 @@ export async function fetchNotesForUser() {
         const noteElement = document.createElement("div");
         noteElement.classList.add("note");
         noteElement.innerHTML = `
-          <h3>${note.title}</h3>
-          <p>${note.note}</p>`;
+          <h3>Username: ${note.username}</h3>
+          <h3>Title: ${note.title}</h3>
+          <p> Note: ${note.note}</p>`;
         // Append the note element to the notes container
         notesContainer?.appendChild(noteElement);
+
+        const editButton = document.createElement("button");
+        editButton.textContent = "Edit";
+        editButton.classList.add("editBtn");
+        editButton.addEventListener("click", () => {
+          editNote(note, noteElement)
+        });
+        noteElement.appendChild(editButton);
+
+        const updateButton = document.createElement("button");
+        updateButton.textContent = "Update";
+        updateButton.classList.add("updateBtn");
+        updateButton.style.display = "none";
+        updateButton.addEventListener("click", () => {
+          updateNote(note, noteElement);
+        });
+        noteElement.appendChild(updateButton);
+
+        const deleteButton = document.createElement("button"); // Create delete button
+        deleteButton.textContent = "Delete";
+        deleteButton.classList.add("deleteBtn"); // Add deleteBtn class
+        deleteButton.addEventListener("click", () => {
+          deleteNoteHandler(note.id); // Call deleteNoteHandler with note ID
+        });
+        noteElement.appendChild(deleteButton);
       });
     } else {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -35,6 +65,12 @@ export async function fetchNotesForUser() {
   } catch (error) {
     console.error("Couldn't fetch notes", error);
     // Handle the error appropriately, e.g., display an error message to the user
+  }
+}
+function deleteNoteHandler(noteId: string) {
+  const confirmation = confirm("Are you sure you want to delete this note?");
+  if (confirmation) {
+    deleteNote(noteId);
   }
 }
 

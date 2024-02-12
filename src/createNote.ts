@@ -12,7 +12,7 @@ export async function createNote() {
 
   const noteInput: HTMLInputElement | null = document.querySelector<HTMLInputElement>("#formInputNote");
   const note: string | undefined = noteInput?.value;
-  console.log("Data to be sent:", { username, title, note });
+
   try {
 
     //create object for the note with user input
