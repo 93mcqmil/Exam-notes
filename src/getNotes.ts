@@ -34,7 +34,7 @@ export async function fetchNotesForUser() {
         noteElement.innerHTML = `
           <h3>Username: ${note.username}</h3>
           <h3>Title: ${note.title}</h3>
-          <h3> Note: ${note.note}</h3>`;
+          <p> Note: ${note.note}</p>`;
         // Append the note element to the notes container
         notesContainer?.appendChild(noteElement);
 
@@ -82,7 +82,7 @@ function deleteNoteHandler(noteId: string) {
 //username to get notes
 const username = "mcqueen";
 
-// createNote("mcqueen");
+
 document.getElementById("GetNotes-btn")?.addEventListener("click", () => { fetchNotesForUser() })
 
 document.getElementById("submit-btn")?.addEventListener("click", () => {
