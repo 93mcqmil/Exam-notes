@@ -1,7 +1,7 @@
 import "./main";
 import { User } from "./types/userFace";
 
-// Function to create note
+
 export async function createNote() {
   //Get users input from the form
   const usernameInput: HTMLInputElement | null = document.querySelector<HTMLInputElement>("#formInputUsername");

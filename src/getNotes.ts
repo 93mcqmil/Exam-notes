@@ -53,8 +53,9 @@ export async function fetchNotesForUser() {
 
         const deleteButton = document.createElement("button"); // Create delete button
         deleteButton.textContent = "Delete";
-        deleteButton.classList.add("deleteBtn"); // Add deleteBtn class
-        deleteButton.addEventListener("click", () => {
+        deleteButton.classList.add("deleteBtn");
+        deleteButton.addEventListener("click", (event) => {
+          event.preventDefault();
           deleteNoteHandler(note.id); // Call deleteNoteHandler with note ID
         });
         noteElement.appendChild(deleteButton);
@@ -75,13 +76,11 @@ function deleteNoteHandler(noteId: string) {
 }
 
 //username to get notes
-// const username = "mcqueen";
+const username = "mcqueen";
 
 // createNote("mcqueen");
 document.getElementById("GetNotes-btn")?.addEventListener("click", () => { fetchNotesForUser() })
-// document.getElementById("submit-btn")?.addEventListener("click", () => {
-// createNote);
-// });
+
 document.getElementById("submit-btn")?.addEventListener("click", () => {
   createNote();
 });

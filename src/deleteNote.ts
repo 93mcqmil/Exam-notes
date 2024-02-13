@@ -16,10 +16,10 @@ export async function deleteNote(noteId: string) {
             }
 
             // Remove the note element from the UI
-            const noteElement = document.getElementById(noteId);
-            noteElement?.remove();
+            // const noteElement = document.getElementById(noteId);
+            // noteElement?.remove();
         } else if (response.status === 400) {
-            console.log("Note already deleted or not found.");
+            console.log("Note is already deleted or not found.");
         } else {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
