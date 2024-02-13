@@ -22,6 +22,10 @@ export async function fetchNotesForUser() {
       const notes = notesData.notes;
       const notesContainer = document.querySelector(".user-notes");
 
+      //clear previously rendered notes
+      if (notesContainer) {
+        notesContainer.innerHTML = "";
+      }
 
       notes.map((note: any) => {
         // Create new DOM element for each note
@@ -30,7 +34,7 @@ export async function fetchNotesForUser() {
         noteElement.innerHTML = `
           <h3>Username: ${note.username}</h3>
           <h3>Title: ${note.title}</h3>
-          <p> Note: ${note.note}</p>`;
+          <h3> Note: ${note.note}</h3>`;
         // Append the note element to the notes container
         notesContainer?.appendChild(noteElement);
 

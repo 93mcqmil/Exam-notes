@@ -1,23 +1,35 @@
 body {
-  background-color: rgb(234, 169, 7);
+  background-color: rgb(234, 174, 7);
 }
 
 .form__user {
   width: 25rem;
-  height: 1.5rem;
+  height: 1.8rem;
 }
 #GetNotes-btn {
   margin-top: 1rem;
 }
 
 .form__title {
-  height: 1.5rem;
+  height: 1.8rem;
   margin-top: 1.5rem;
 }
 .form__note {
   margin-left: 2.5rem;
-  height: 1.5rem;
+  height: 1.8rem;
 }
 #submit-btn {
   margin-top: 1rem;
+}
+
+h1 {
+  font-family: "Protest Revolution", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  font-family: "Protest Revolution", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }

@@ -22,7 +22,7 @@ export async function createNote() {
       note,
     };
 
-    //send data to API with "POST"-apply
+    //send data to API "Post" apply
     const response = await fetch(
       "https://o6wl0z7avc.execute-api.eu-north-1.amazonaws.com/api/notes",
       {
@@ -38,9 +38,8 @@ export async function createNote() {
       //Send to new page
       const responseData = await response.json();
       console.log("Response data from server:", responseData);
-      // Get reference to result element
 
-      //HTML string to post result
+      //String to post result
       const resultHTML = ` <h2><u>NOTE CREATED!</u></h2>
       <h2> <u> User: </u> ${notePost.username} </h2>
       <h2> <u> Title:</u> ${notePost.title} </h2>
